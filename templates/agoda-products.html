@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+	<!--Background setting of WTW-Computer website -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agoda</title>
+	<link rel="icon" href="img/wtw_psf_1.ico">
+	
+	<!--For connecting the css & javascript -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<!--For setting the background -->
+	<style>
+		body{
+			background-color: #e0e0eb
+		}
+		/* Style the footer */
+		footer {
+  			background-color: #777;
+  			padding: 10px;
+  			text-align: center;
+  			color: white;
+		}
+	</style>
+	
+	<!-- Setting up for using jQuery-->
+
+</head>
+
+<body>
+	<nav class="navbar sticky-top navbar-expand-sm navbar-dark" style="background-color: #f0f0f5">
+	<a class="navbar-brand" style="color:#3399ff" herf="#"><img src="static/image/agoda-logo.png" title="Agoda International" alt="Agoda Logo" height="45"><img src="static/image/®.png" alt=" " width="15" height="15"></a>
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headNavbar">
+    <span class="navbar-toggler-icon"></span>
+  	</button>
+		
+  	<div class="collapse navbar-collapse" id="headNavbar">
+  		<ul class="navbar-nav">
+  		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/" title="Home Page of WTW Computer">Original Agoda</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/Agoda-platform" title="Home Page of WTW Computer">Home</a>
+
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/products" title="Know more about WTW-Computer">Products</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/trips" title="Know more about WTW-Computer">Trips</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/reg" title="To be our member">Sign Up</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/login" title="To login our system">Sign In</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/blog" title="For staff only">Blog</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/add_product" title="For staff only">Add product</a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link " style="color:#EE3131;font-weight: bold; "  href="http://localhost:8000/add_trips" title="For staff only">Plan your trip</a>
+		</li>
+		</ul>
+		</div>
+	</nav>
+
+	<div class="row ">
+    		<p><h2>Products </h2></p>
+            {% for item in product %}
+
+    	<div class="col-12" >
+    		<p><h1 id="recipt"></h1></p>
+
+      	<div id="list_of_product">
+
+            <p>
+      	<div class="product"  style="padding: 5px;">
+        	<div class="row">
+          	<div class="col-sm-4 col-xl-2  ">
+            	<p><img src="/static/image/product/{{item[0]}}.jpeg" class="product_photo" style=" height: 100% ;width:100%; max-width: 200px; max-height: 200px"></p>
+          	</div>
+
+              <tr>
+                <td>Product ID: {{item[0]}}</td><br>
+                <td>Product Name: {{item[1]}}</td><br>
+                <td>Product Intro: {{item[2]}}</td><br>
+                <td>Price: {{item[3]}}</td><br>
+                <td>Stock: {{item[5]}}</td><br>
+                <td>Seller(base on user ID): {{item[6]}}</td><br>
+
+
+                <form action="" method="get">
+                 <p><Button type="submit" class="btn btn-primary" id="register_submit">Order</Button></p>
+
+
+                </form>
+
+                <hr style="height:1px;border-top:1px solid #f00" /><br>
+           
+              </tr>
+
+
+              <br>
+              {% endfor %}
+          </p>
+        </div>
+      </div>
+      <br>
+      </div>
+  	</div>
+  
+    </div>
+
+ 	<footer class="footer">
+	  <div class ="container">
+		<p class="text-xs-center">All material herein © 2005–2020 Agoda Company Pte. Ltd. All Rights Reserved.</p>
+		<p class="text-xs-center">Agoda is part of Booking Holdings Inc., the world leader in online travel & related services.</p>
+		
+		</div>
+	</footer>
+</body>
+</html>
