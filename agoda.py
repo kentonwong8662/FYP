@@ -57,6 +57,7 @@ def reg_get():
 		usrn = request.form['Username']
 		uspw = request.form['pwd']
 		nation = request.form['nation']
+		bornyear = request.form['bornyear']
 
 
 
@@ -65,8 +66,8 @@ def reg_get():
 		cursor = db.cursor() 
 
 
-		sql = """INSERT INTO member_data (member_Firstname,member_Surname,member_Username,member_password,member_Email,member_Address, member_Location,member_Phone) VALUES ('%s','%s','%s','%s','%s','%s','%s','%d')"""\
-	  %(str(fir_nam),str(las_nam),str(usrn),str(uspw),str(email_address),str(home_address),str(nation),int(phone_no))
+		sql = """INSERT INTO member_data (member_Firstname,member_Surname,member_Username,member_password,member_Email,member_Address, member_Location,member_Phone, member_born) VALUES ('%s','%s','%s','%s','%s','%s','%s','%d', '%d')"""\
+	  %(str(fir_nam),str(las_nam),str(usrn),str(uspw),str(email_address),str(home_address),str(nation),int(phone_no), int(bornyear))
 
 
 	  
