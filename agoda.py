@@ -146,6 +146,16 @@ def blog():
 	return render_template("agoda-blog.html", blog= blog)
 
 
+@app.route("/add_blog")
+def add_blog():
+	if username == 0:
+
+		return render_template("agoda-nologin.html")
+
+	else:
+		return render_template("agoda-products-add.html")
+
+
 @app.route("/products")
 def products():
 	db = pymysql.connect("localhost", "root", "12345678", "agoda")

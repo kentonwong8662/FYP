@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- 主機： 127.0.0.1
--- 產生時間： 2020-05-20 17:15:16
--- 伺服器版本： 10.4.11-MariaDB
--- PHP 版本： 7.4.5
+-- Host: 127.0.0.1
+-- Generation Time: May 22, 2020 at 03:23 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫： `agoda`
+-- Database: `agoda`
 --
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `blog`
+-- Table structure for table `blog`
 --
 
 CREATE TABLE `blog` (
@@ -38,7 +38,7 @@ CREATE TABLE `blog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `blog`
+-- Dumping data for table `blog`
 --
 
 INSERT INTO `blog` (`blog_ID`, `blog_Title`, `blog_Index`, `blog_Type`, `blog_Tag`, `location_ID`, `member_ID`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `blog` (`blog_ID`, `blog_Title`, `blog_Index`, `blog_Type`, `blog_Ta
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `business_data`
+-- Table structure for table `business_data`
 --
 
 CREATE TABLE `business_data` (
@@ -61,7 +61,7 @@ CREATE TABLE `business_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `business_data`
+-- Dumping data for table `business_data`
 --
 
 INSERT INTO `business_data` (`business_ID`, `business_Name`, `business_Type`, `business_Intro`, `business_Link`, `business_Logo`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `business_data` (`business_ID`, `business_Name`, `business_Type`, `b
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `loca_country`
+-- Table structure for table `loca_country`
 --
 
 CREATE TABLE `loca_country` (
@@ -80,7 +80,7 @@ CREATE TABLE `loca_country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `loca_country`
+-- Dumping data for table `loca_country`
 --
 
 INSERT INTO `loca_country` (`country_ID`, `country_Name`, `country_Continent`) VALUES
@@ -92,7 +92,7 @@ INSERT INTO `loca_country` (`country_ID`, `country_Name`, `country_Continent`) V
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `loca_location`
+-- Table structure for table `loca_location`
 --
 
 CREATE TABLE `loca_location` (
@@ -102,7 +102,7 @@ CREATE TABLE `loca_location` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `loca_location`
+-- Dumping data for table `loca_location`
 --
 
 INSERT INTO `loca_location` (`location_ID`, `location_Name`, `country_ID`) VALUES
@@ -116,7 +116,7 @@ INSERT INTO `loca_location` (`location_ID`, `location_Name`, `country_ID`) VALUE
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `member_data`
+-- Table structure for table `member_data`
 --
 
 CREATE TABLE `member_data` (
@@ -129,23 +129,24 @@ CREATE TABLE `member_data` (
   `member_Email` char(255) COLLATE utf8mb4_bin NOT NULL,
   `member_Location` char(255) COLLATE utf8mb4_bin NOT NULL,
   `member_Address` char(255) COLLATE utf8mb4_bin NOT NULL,
-  `member_Type` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
+  `member_Type` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `member_born` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `member_data`
+-- Dumping data for table `member_data`
 --
 
-INSERT INTO `member_data` (`member_ID`, `member_Surname`, `member_Firstname`, `member_Username`, `member_password`, `member_Phone`, `member_Email`, `member_Location`, `member_Address`, `member_Type`) VALUES
-(1, 'Wong', 'Kenton', 'Kenton', '12345678', 98765432, 'thelastk2820@gmail.com', 'Hong Kong', 'Hong Kong', 'TourGudide'),
-(2, 'A', 'B', 'Agoda', '87654321', 98765432, 'agoda.fyp.auto@gmail.com', 'World', 'World', 'NormalUser'),
-(3, 'Test', 'Yo', 'yotest', '12345678', 55556666, 'thelastk2820@gmail.com', 'HK', 'TSTE', 'TravelBusiness'),
-(8, 'Welcome', 'Hey', 'Yo', '12345678', 55208994, 'ab@gmail.com', 'Hong Kong', 'HK299', NULL);
+INSERT INTO `member_data` (`member_ID`, `member_Surname`, `member_Firstname`, `member_Username`, `member_password`, `member_Phone`, `member_Email`, `member_Location`, `member_Address`, `member_Type`, `member_born`) VALUES
+(1, 'Wong', 'Kenton', 'Kenton', '12345678', 98765432, 'thelastk2820@gmail.com', 'Hong Kong', 'Hong Kong', 'TourGudide', 1999),
+(2, 'A', 'B', 'Agoda', '87654321', 98765432, 'agoda.fyp.auto@gmail.com', 'World', 'World', 'NormalUser', 2001),
+(3, 'Test', 'Yo', 'yotest', '12345678', 55556666, 'thelastk2820@gmail.com', 'HK', 'TSTE', 'TravelBusiness', 1987),
+(8, 'Welcome', 'Hey', 'Yo', '12345678', 55208994, 'ab@gmail.com', 'Hong Kong', 'HK299', NULL, 2000);
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `member_order`
+-- Table structure for table `member_order`
 --
 
 CREATE TABLE `member_order` (
@@ -158,7 +159,7 @@ CREATE TABLE `member_order` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `member_payment`
+-- Table structure for table `member_payment`
 --
 
 CREATE TABLE `member_payment` (
@@ -172,7 +173,7 @@ CREATE TABLE `member_payment` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -186,7 +187,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_ID`, `product_Name`, `product_Intro`, `product_Price`, `product_Logo`, `product_Stock`, `business_ID`) VALUES
@@ -200,7 +201,7 @@ INSERT INTO `product` (`product_ID`, `product_Name`, `product_Intro`, `product_P
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `product_type`
+-- Table structure for table `product_type`
 --
 
 CREATE TABLE `product_type` (
@@ -211,7 +212,7 @@ CREATE TABLE `product_type` (
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `trips`
+-- Table structure for table `trips`
 --
 
 CREATE TABLE `trips` (
@@ -230,7 +231,7 @@ CREATE TABLE `trips` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- 傾印資料表的資料 `trips`
+-- Dumping data for table `trips`
 --
 
 INSERT INTO `trips` (`trips_ID`, `member_ID`, `trips_Title`, `trips_Intro`, `trips_dateStart`, `trips_dateEnd`, `trips_Price`, `trips_Stock`, `trips_Location`, `trips_Type`, `trip_uploadDate`, `trip_guide`) VALUES
@@ -239,11 +240,11 @@ INSERT INTO `trips` (`trips_ID`, `member_ID`, `trips_Title`, `trips_Intro`, `tri
 (3, 1, 'robt', 'Hong kong', NULL, NULL, 5000, 20, 'robot', 'technology', NULL, 1);
 
 --
--- 已傾印資料表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 資料表索引 `blog`
+-- Indexes for table `blog`
 --
 ALTER TABLE `blog`
   ADD PRIMARY KEY (`blog_ID`),
@@ -251,32 +252,32 @@ ALTER TABLE `blog`
   ADD KEY `country_ID` (`location_ID`);
 
 --
--- 資料表索引 `business_data`
+-- Indexes for table `business_data`
 --
 ALTER TABLE `business_data`
   ADD PRIMARY KEY (`business_ID`);
 
 --
--- 資料表索引 `loca_country`
+-- Indexes for table `loca_country`
 --
 ALTER TABLE `loca_country`
   ADD PRIMARY KEY (`country_ID`);
 
 --
--- 資料表索引 `loca_location`
+-- Indexes for table `loca_location`
 --
 ALTER TABLE `loca_location`
   ADD PRIMARY KEY (`location_ID`),
   ADD KEY `country_ID` (`country_ID`);
 
 --
--- 資料表索引 `member_data`
+-- Indexes for table `member_data`
 --
 ALTER TABLE `member_data`
   ADD PRIMARY KEY (`member_ID`);
 
 --
--- 資料表索引 `member_order`
+-- Indexes for table `member_order`
 --
 ALTER TABLE `member_order`
   ADD KEY `member_ID` (`member_ID`),
@@ -284,84 +285,84 @@ ALTER TABLE `member_order`
   ADD KEY `trips_ID` (`trips_ID`);
 
 --
--- 資料表索引 `member_payment`
+-- Indexes for table `member_payment`
 --
 ALTER TABLE `member_payment`
   ADD PRIMARY KEY (`member_ID`);
 
 --
--- 資料表索引 `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`product_ID`),
   ADD KEY `business_ID` (`business_ID`);
 
 --
--- 資料表索引 `product_type`
+-- Indexes for table `product_type`
 --
 ALTER TABLE `product_type`
   ADD PRIMARY KEY (`product_type_ID`);
 
 --
--- 資料表索引 `trips`
+-- Indexes for table `trips`
 --
 ALTER TABLE `trips`
   ADD PRIMARY KEY (`trips_ID`),
   ADD KEY `member_ID` (`member_ID`);
 
 --
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `blog`
+-- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
   MODIFY `blog_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `member_data`
+-- AUTO_INCREMENT for table `member_data`
 --
 ALTER TABLE `member_data`
   MODIFY `member_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `product_type`
+-- AUTO_INCREMENT for table `product_type`
 --
 ALTER TABLE `product_type`
   MODIFY `product_type_ID` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `trips`
+-- AUTO_INCREMENT for table `trips`
 --
 ALTER TABLE `trips`
   MODIFY `trips_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- 已傾印資料表的限制式
+-- Constraints for dumped tables
 --
 
 --
--- 資料表的限制式 `blog`
+-- Constraints for table `blog`
 --
 ALTER TABLE `blog`
   ADD CONSTRAINT `blog_ibfk_1` FOREIGN KEY (`member_ID`) REFERENCES `member_data` (`member_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `blog_ibfk_2` FOREIGN KEY (`location_ID`) REFERENCES `loca_location` (`location_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 資料表的限制式 `loca_location`
+-- Constraints for table `loca_location`
 --
 ALTER TABLE `loca_location`
   ADD CONSTRAINT `loca_location_ibfk_1` FOREIGN KEY (`country_ID`) REFERENCES `loca_country` (`country_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 資料表的限制式 `member_order`
+-- Constraints for table `member_order`
 --
 ALTER TABLE `member_order`
   ADD CONSTRAINT `member_order_ibfk_1` FOREIGN KEY (`member_ID`) REFERENCES `member_data` (`member_ID`),
@@ -369,19 +370,19 @@ ALTER TABLE `member_order`
   ADD CONSTRAINT `member_order_ibfk_3` FOREIGN KEY (`product_ID`) REFERENCES `product` (`product_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 資料表的限制式 `member_payment`
+-- Constraints for table `member_payment`
 --
 ALTER TABLE `member_payment`
   ADD CONSTRAINT `member_payment_ibfk_1` FOREIGN KEY (`member_ID`) REFERENCES `member_data` (`member_ID`);
 
 --
--- 資料表的限制式 `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`business_ID`) REFERENCES `business_data` (`business_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- 資料表的限制式 `trips`
+-- Constraints for table `trips`
 --
 ALTER TABLE `trips`
   ADD CONSTRAINT `trips_ibfk_1` FOREIGN KEY (`member_ID`) REFERENCES `member_data` (`member_ID`);
