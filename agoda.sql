@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 22, 2020 at 03:23 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Host: localhost
+-- Generation Time: May 22, 2020 at 08:53 PM
+-- Server version: 5.7.30-0ubuntu0.16.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -141,7 +140,8 @@ INSERT INTO `member_data` (`member_ID`, `member_Surname`, `member_Firstname`, `m
 (1, 'Wong', 'Kenton', 'Kenton', '12345678', 98765432, 'thelastk2820@gmail.com', 'Hong Kong', 'Hong Kong', 'TourGudide', 1999),
 (2, 'A', 'B', 'Agoda', '87654321', 98765432, 'agoda.fyp.auto@gmail.com', 'World', 'World', 'NormalUser', 2001),
 (3, 'Test', 'Yo', 'yotest', '12345678', 55556666, 'thelastk2820@gmail.com', 'HK', 'TSTE', 'TravelBusiness', 1987),
-(8, 'Welcome', 'Hey', 'Yo', '12345678', 55208994, 'ab@gmail.com', 'Hong Kong', 'HK299', NULL, 2000);
+(8, 'Welcome', 'Hey', 'Yo', '12345678', 55208994, 'ab@gmail.com', 'Hong Kong', 'HK299', NULL, 2000),
+(9, 'admin', 'admin', 'admin', 'admin', 88776655, 'admin@admin.com', 'admin', 'admin', NULL, 1988);
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,8 @@ INSERT INTO `product` (`product_ID`, `product_Name`, `product_Intro`, `product_P
 (3, 'Test', 'GOGO', 10, '', 20, 1),
 (8, 'mask', '50 masks', 150, NULL, 10, NULL),
 (9, 'mask', '50 masks', 500, NULL, 800, 1),
-(10, 'hong kong', 'hello', 50, NULL, 20, 1);
+(10, 'hong kong', 'hello', 50, NULL, 20, 1),
+(11, 'UK sim card', '12GB 1 month', 160, NULL, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -319,31 +320,26 @@ ALTER TABLE `trips`
 --
 ALTER TABLE `blog`
   MODIFY `blog_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `member_data`
 --
 ALTER TABLE `member_data`
-  MODIFY `member_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `member_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `product_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `product_type`
 --
 ALTER TABLE `product_type`
   MODIFY `product_type_ID` int(5) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `trips`
 --
 ALTER TABLE `trips`
   MODIFY `trips_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- Constraints for dumped tables
 --
@@ -386,7 +382,6 @@ ALTER TABLE `product`
 --
 ALTER TABLE `trips`
   ADD CONSTRAINT `trips_ibfk_1` FOREIGN KEY (`member_ID`) REFERENCES `member_data` (`member_ID`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
